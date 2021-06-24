@@ -7,6 +7,7 @@
     <Description>Helper classes for Dependency Injection</Description>
     <!-- ReSharper disable once UnknownProperty -->
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EvilBaschdi.DependencyInjection.xml</DocumentationFile>
+	<EnableNETAnalyzers>true</EnableNETAnalyzers>
     <IsPackable>true</IsPackable>
     <LangVersion>9</LangVersion>
     <PackageIcon>icon.png</PackageIcon>
@@ -17,9 +18,12 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.DependencyInjection</RepositoryUrl>
     <TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
-    <Version>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</Version>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+	<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>    
   </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-preview.5.21301.5" />
