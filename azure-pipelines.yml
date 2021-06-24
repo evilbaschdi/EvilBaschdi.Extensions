@@ -18,4 +18,4 @@ resources:
 jobs:
 - template: azureDevOps.yml@templates  # Template reference
   parameters:
-    projectName: 'EvilBaschdi.DependencyInjection'
+    projectName: $(Build.Repository.Name)
