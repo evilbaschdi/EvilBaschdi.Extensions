@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using EvilBaschdi.Core;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.DependencyInjection
@@ -127,11 +126,5 @@ namespace EvilBaschdi.DependencyInjection
                 _services.AddTransient(resolveType, compiledExpression);
             }
         }
-    }
-
-    /// <inheritdoc />
-    public interface IConfigureServiceCollection : IRunFor<IServiceCollection>
-    {
-
     }
 }
