@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class HandleAppStartup : IHandleAppStartup
+public class HandleAppStartup<TOut> : IHandleAppStartup<TOut>
 {
     private readonly IHostInstance _hostInstance;
 
@@ -21,15 +21,11 @@ public class HandleAppStartup : IHandleAppStartup
     }
 
     /// <inheritdoc />
-    public async Task<T> ValueForAsync<T>(IServiceProvider serviceProvider)
-        //where T : Window
-    {
-        //#if (!DEBUG)
-        //ThemeManager.Current.SyncTheme(ThemeSyncMode.SyncAll);
-        //#endif
+    public async Task<TOut> ValueForAsync(IServiceProvider serviceProvider)
 
+    {
         await _hostInstance.Value.StartAsync();
-        var window = serviceProvider.GetRequiredService<T>();
+        var window = serviceProvider.GetRequiredService<TOut>();
 
         return window;
     }

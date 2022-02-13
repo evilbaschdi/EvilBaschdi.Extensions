@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Threading.Tasks;
+using EvilBaschdi.Core;
 
 namespace EvilBaschdi.DependencyInjection;
 
-/// <summary>
-/// </summary>
-public interface IHandleAppStartup
+/// <inheritdoc />
+public interface IHandleAppStartup<TOut> : IValueForAsync<IServiceProvider, TOut>
 {
-    /// <summary>
-    /// </summary>
-    Task<T> ValueForAsync<T>(IServiceProvider serviceProvider);
-    //where TWindow : Window;
 }
