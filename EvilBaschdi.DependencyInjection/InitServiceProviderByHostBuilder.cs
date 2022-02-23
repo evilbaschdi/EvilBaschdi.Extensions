@@ -1,4 +1,3 @@
-using System;
 using EvilBaschdi.Core;
 using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
