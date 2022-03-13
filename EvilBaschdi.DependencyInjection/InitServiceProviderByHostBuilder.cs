@@ -1,4 +1,3 @@
-using EvilBaschdi.Core;
 using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -6,7 +5,7 @@ using Microsoft.Extensions.Hosting;
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class InitServiceProviderByHostBuilder : IValueFor<Action<HostBuilderContext, IServiceCollection>, IServiceProvider>
+public class InitServiceProviderByHostBuilder : IInitServiceProviderByHostBuilder
 {
     private readonly IHostInstance _hostInstance;
 
