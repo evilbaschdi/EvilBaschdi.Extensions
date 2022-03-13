@@ -1,5 +1,4 @@
 using JetBrains.Annotations;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace EvilBaschdi.DependencyInjection;
@@ -7,19 +6,20 @@ namespace EvilBaschdi.DependencyInjection;
 /// <inheritdoc />
 public class ConfigureServicesByHostBuilderAndConfigureDelegate : IConfigureServicesByHostBuilderAndConfigureDelegate
 {
-    private readonly Action<HostBuilderContext, IServiceCollection> _configureDelegate;
+    private readonly IConfigureDelegateForConfigureServices _configureDelegateForConfigureServices;
     private readonly IHostInstance _hostInstance;
 
     /// <summary>
     ///     Configure
     /// </summary>
     /// <param name="hostInstance"></param>
-    /// <param name="configureDelegate"></param>
+    /// <param name="configureDelegateForConfigureServices"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public ConfigureServicesByHostBuilderAndConfigureDelegate([NotNull] IHostInstance hostInstance, [NotNull] Action<HostBuilderContext, IServiceCollection> configureDelegate)
+    public ConfigureServicesByHostBuilderAndConfigureDelegate([NotNull] IHostInstance hostInstance,
+                                                              [NotNull] IConfigureDelegateForConfigureServices configureDelegateForConfigureServices)
     {
         _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
-        _configureDelegate = configureDelegate ?? throw new ArgumentNullException(nameof(configureDelegate));
+        _configureDelegateForConfigureServices = configureDelegateForConfigureServices ?? throw new ArgumentNullException(nameof(configureDelegateForConfigureServices));
     }
 
     /// <inheritdoc />
@@ -28,7 +28,7 @@ public class ConfigureServicesByHostBuilderAndConfigureDelegate : IConfigureServ
         get
         {
             _hostInstance.Value = Host.CreateDefaultBuilder()
-                                      .ConfigureServices(_configureDelegate)
+                                      .ConfigureServices(_configureDelegateForConfigureServices.RunFor)
                                       .Build();
 
             return _hostInstance.Value.Services;
