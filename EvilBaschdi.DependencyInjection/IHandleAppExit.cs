@@ -4,6 +4,6 @@ namespace EvilBaschdi.DependencyInjection;
 
 /// <summary>
 /// </summary>
-public interface IHandleAppExit : IRunAsync
+public interface IHandleAppExit : ITaskValue
 {
 }

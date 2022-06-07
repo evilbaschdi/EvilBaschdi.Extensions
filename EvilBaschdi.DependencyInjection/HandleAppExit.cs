@@ -19,7 +19,7 @@ public class HandleAppExit : IHandleAppExit
     }
 
     /// <inheritdoc />
-    public async Task RunAsync()
+    public async Task Value()
     {
         await _hostInstance.Value.StopAsync(TimeSpan.FromSeconds(5));
 
