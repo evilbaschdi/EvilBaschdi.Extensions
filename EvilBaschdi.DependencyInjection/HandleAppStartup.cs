@@ -20,7 +20,6 @@ public class HandleAppStartup<TOut> : IHandleAppStartup<TOut>
 
     /// <inheritdoc />
     public async Task<TOut> ValueFor(IServiceProvider serviceProvider)
-
     {
         await _hostInstance.Value.StartAsync();
         var window = serviceProvider.GetRequiredService<TOut>();
