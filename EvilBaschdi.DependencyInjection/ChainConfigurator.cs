@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿// ReSharper disable UnusedMember.Global
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.DependencyInjection;
 

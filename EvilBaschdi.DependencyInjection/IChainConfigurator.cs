@@ -1,4 +1,7 @@
-﻿namespace EvilBaschdi.DependencyInjection;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedMemberInSuper.Global
+
+namespace EvilBaschdi.DependencyInjection;
 
 /// <summary>
 /// </summary>
@@ -14,13 +17,9 @@ public interface IChainConfigurator<in T>
 
     /// <summary>
     /// </summary>
-    // ReSharper disable once UnusedType.Global
-    // ReSharper disable once UnusedMemberInSuper.Global
     void Configure();
 
     /// <summary>
     /// </summary>
-    // ReSharper disable once UnusedType.Global
-    // ReSharper disable once UnusedMemberInSuper.Global
     void ConfigureType(Type currentType);
 }
