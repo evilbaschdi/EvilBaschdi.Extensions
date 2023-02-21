@@ -1,5 +1,3 @@
-using EvilBaschdi.Core;
-
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />

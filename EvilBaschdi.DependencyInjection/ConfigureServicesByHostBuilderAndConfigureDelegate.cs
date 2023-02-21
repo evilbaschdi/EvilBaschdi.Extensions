@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using Microsoft.Extensions.Hosting;
 
 namespace EvilBaschdi.DependencyInjection;

@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.DependencyInjection;
 
@@ -19,8 +18,7 @@ public class HandleAppStartup<TOut> : IHandleAppStartup<TOut>
     }
 
     /// <inheritdoc />
-    public async Task<TOut> ValueForAsync(IServiceProvider serviceProvider)
-
+    public async Task<TOut> ValueFor(IServiceProvider serviceProvider)
     {
         await _hostInstance.Value.StartAsync();
         var window = serviceProvider.GetRequiredService<TOut>();

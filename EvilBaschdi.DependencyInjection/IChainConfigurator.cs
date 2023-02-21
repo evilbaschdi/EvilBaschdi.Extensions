@@ -1,4 +1,7 @@
-﻿namespace EvilBaschdi.DependencyInjection;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedMemberInSuper.Global
+
+namespace EvilBaschdi.DependencyInjection;
 
 /// <summary>
 /// </summary>

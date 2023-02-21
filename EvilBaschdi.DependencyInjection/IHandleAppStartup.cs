@@ -1,8 +1,6 @@
-﻿using EvilBaschdi.Core;
-
-namespace EvilBaschdi.DependencyInjection;
+﻿namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public interface IHandleAppStartup<TOut> : IValueForAsync<IServiceProvider, TOut>
+public interface IHandleAppStartup<TOut> : ITaskWithResultValueFor<IServiceProvider, TOut>
 {
 }

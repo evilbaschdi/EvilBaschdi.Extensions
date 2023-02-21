@@ -1,9 +1,7 @@
-﻿using EvilBaschdi.Core;
-
-namespace EvilBaschdi.DependencyInjection;
+﻿namespace EvilBaschdi.DependencyInjection;
 
 /// <summary>
 /// </summary>
-public interface IHandleAppExit : IRunAsync
+public interface IHandleAppExit : ITaskValue
 {
 }
