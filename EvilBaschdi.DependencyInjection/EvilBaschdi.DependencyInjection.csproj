@@ -35,8 +35,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="EvilBaschdi.Core" Version="2023.3.9.1752-develop" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.1.23110.8" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.1.23110.8" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.2.23128.3" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.2.23128.3" />
 	</ItemGroup>
 
 	<!-- this project only -->

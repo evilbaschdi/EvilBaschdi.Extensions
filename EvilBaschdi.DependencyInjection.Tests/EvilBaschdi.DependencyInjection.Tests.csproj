@@ -12,8 +12,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="EvilBaschdi.Testing" Version="2023.3.9.1736-develop" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+		<PackageReference Include="EvilBaschdi.Testing" Version="2023.3.13.1715-develop" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0-preview-20230223-05" />
 	</ItemGroup>
 
 	<ItemGroup>
