@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0</TargetFramework>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0-preview.3.23174.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0-preview.3.23174.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0-preview.3.23174.8" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\EvilBaschdi.Settings\EvilBaschdi.Settings.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="KeyValue.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<Compile Update="KeyValue.cs">
+			<DependentUpon>KeyValue.json</DependentUpon>
+		</Compile>
+		<None Update="KeyValueList.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<Compile Update="KeyValueList.cs">
+			<DependentUpon>KeyValueList.json</DependentUpon>
+		</Compile>
+		<None Update="Settings\App.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>

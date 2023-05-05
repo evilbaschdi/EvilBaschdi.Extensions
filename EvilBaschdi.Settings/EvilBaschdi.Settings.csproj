@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Authors>Sebastian Walter</Authors>
+		<Company>evilbaschdi (Sebastian Walter)</Company>
+		<Copyright>Copyright © 2019 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Description>Extension package for Microsoft.Extensions.Configuration</Description>
+		<!-- ReSharper disable once UnknownProperty -->
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsPackable>true</IsPackable>
+		<LangVersion>preview</LangVersion>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
+		<PackageId>EvilBaschdi.Settings</PackageId>
+		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Settings</PackageProjectUrl>
+		<PackageTags>Settings</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Settings</RepositoryUrl>
+		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="EvilBaschdi.Core" />
+		<Using Include="JetBrains.Annotations" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EvilBaschdi.Core" Version="2023.4.21.523-develop" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0-preview.3.23174.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0-preview.3.23174.8" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0-preview.3.23174.8" />
+	</ItemGroup>
+
+	<!-- this project only -->
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>
