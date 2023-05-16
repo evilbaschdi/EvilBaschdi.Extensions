@@ -18,5 +18,5 @@ resources:
 jobs:
 - template: buildNPack.yml@templates  # Template reference
   parameters:
-    projectName: $(Build.Repository.Name)
+    projectName: '*'
     projectParentDirectory: ''
