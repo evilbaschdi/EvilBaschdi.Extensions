@@ -1,19 +1,34 @@
 <Project>
 
 	<PropertyGroup>
+		<Authors>Sebastian Walter</Authors>
+		<Company>evilbaschdi (Sebastian Walter)</Company>
+		<Copyright>Copyright © 2019 - $([System.DateTime]::UtcNow.ToString(yyyy)) evilbaschdi</Copyright>
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<IsPackable>true</IsPackable>
 		<LangVersion>preview</LangVersion>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl><![CDATA[https://avatars1.githubusercontent.com/u/1897807?s=120&v=4]]></PackageIconUrl>
+		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Extensions</PackageProjectUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Extensions</RepositoryUrl>
 		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
+		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="TestResults\**" />
+		<EmbeddedResource Remove="TestResults\**" />
+		<None Remove="TestResults\**" />
 	</ItemGroup>
 
 	<!-- ReSharper disable once UnknownProperty -->
