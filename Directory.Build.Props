@@ -16,8 +16,8 @@
 		<PackageProjectUrl>https://github.com/evilbaschdi/EvilBaschdi.Extensions</PackageProjectUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryUrl>https://github.com/evilbaschdi/EvilBaschdi.Extensions</RepositoryUrl>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
 		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 		<VersionPrefix>$([System.DateTime]::UtcNow.ToString(yyyy.M.d.Hmm))</VersionPrefix>
 	</PropertyGroup>
 
@@ -32,7 +32,8 @@
 	</ItemGroup>
 
 	<!-- ReSharper disable once UnknownProperty -->
-	<PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<NoWarn>1701;1702</NoWarn>
 	</PropertyGroup>
 
@@ -54,20 +55,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="EvilBaschdi.Core" Version="2023.5.14.959-develop" />
+		<PackageReference Include="EvilBaschdi.Core" />
 	</ItemGroup>
 
 	<!-- ReSharper disable once UnknownProperty -->
 	<ItemGroup Condition="'$(IsTestProject)' != 'true'">
-		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="1.1.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+		<PackageReference Include="DotNet.ReproducibleBuilds">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
@@ -78,39 +71,35 @@
 		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
 
-	<PropertyGroup>
-		<MicrosoftExtensionsVersion>8.0.0-preview.4.23259.5</MicrosoftExtensionsVersion>
-	</PropertyGroup>
-
 	<!-- ReSharper disable once UnknownProperty -->
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-		<PackageReference Include="EvilBaschdi.Testing" Version="2023.5.16.1647-develop" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
-		<PackageReference Include="coverlet.collector" Version="3.2.0">
+		<PackageReference Include="EvilBaschdi.Testing" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="coverlet.collector">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="FluentAssertions.Analyzers" Version="0.17.2">
+		<PackageReference Include="FluentAssertions.Analyzers">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.10">
+		<PackageReference Include="Meziantou.FluentAssertionsAnalyzers">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="NSubstitute.Analyzers.CSharp" Version="1.0.16">
+		<PackageReference Include="NSubstitute.Analyzers.CSharp">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="xunit.analyzers" Version="1.2.0-pre.8">
+		<PackageReference Include="xunit.analyzers">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="xunit.runner.console" Version="2.5.0-pre.15">
+		<PackageReference Include="xunit.runner.console">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.6-preview.10">
+		<PackageReference Include="xunit.runner.visualstudio">
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
