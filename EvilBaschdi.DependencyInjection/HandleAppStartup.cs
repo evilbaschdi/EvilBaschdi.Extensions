@@ -3,19 +3,14 @@
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class HandleAppStartup<TOut> : IHandleAppStartup<TOut>
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="hostInstance"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class HandleAppStartup<TOut>([NotNull] IHostInstance hostInstance) : IHandleAppStartup<TOut>
 {
-    private readonly IHostInstance _hostInstance;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="hostInstance"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public HandleAppStartup([NotNull] IHostInstance hostInstance)
-    {
-        _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
-    }
+    private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
     public async Task<TOut> ValueFor(IServiceProvider serviceProvider)

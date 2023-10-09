@@ -6,19 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class FireAndForgetHandler<T> : IFireAndForgetHandler<T>
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="serviceScopeFactory"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class FireAndForgetHandler<T>(IServiceScopeFactory serviceScopeFactory) : IFireAndForgetHandler<T>
 {
-    private readonly IServiceScopeFactory _serviceScopeFactory;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="serviceScopeFactory"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public FireAndForgetHandler(IServiceScopeFactory serviceScopeFactory)
-    {
-        _serviceScopeFactory = serviceScopeFactory ?? throw new ArgumentNullException(nameof(serviceScopeFactory));
-    }
+    private readonly IServiceScopeFactory _serviceScopeFactory = serviceScopeFactory ?? throw new ArgumentNullException(nameof(serviceScopeFactory));
 
     /// <inheritdoc />
     public void RunFor(Func<T, Task> func)

@@ -4,22 +4,19 @@ using Newtonsoft.Json.Linq;
 namespace EvilBaschdi.Settings.ByMachineAndUser;
 
 /// <inheritdoc />
-public class AppSettingByKey : IAppSettingByKey
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="appSettingsFromJsonFile"></param>
+/// <param name="appSettingsFromJsonFileByMachineAndUser"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJsonFile,
+                             [NotNull] IAppSettingsFromJsonFileByMachineAndUser appSettingsFromJsonFileByMachineAndUser) : IAppSettingByKey
 {
-    private readonly IAppSettingsFromJsonFile _appSettingsFromJsonFile;
-    private readonly IAppSettingsFromJsonFileByMachineAndUser _appSettingsFromJsonFileByMachineAndUser;
+    private readonly IAppSettingsFromJsonFile _appSettingsFromJsonFile = appSettingsFromJsonFile ?? throw new ArgumentNullException(nameof(appSettingsFromJsonFile));
 
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="appSettingsFromJsonFile"></param>
-    /// <param name="appSettingsFromJsonFileByMachineAndUser"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJsonFile, [NotNull] IAppSettingsFromJsonFileByMachineAndUser appSettingsFromJsonFileByMachineAndUser)
-    {
-        _appSettingsFromJsonFile = appSettingsFromJsonFile ?? throw new ArgumentNullException(nameof(appSettingsFromJsonFile));
-        _appSettingsFromJsonFileByMachineAndUser = appSettingsFromJsonFileByMachineAndUser ?? throw new ArgumentNullException(nameof(appSettingsFromJsonFileByMachineAndUser));
-    }
+    private readonly IAppSettingsFromJsonFileByMachineAndUser _appSettingsFromJsonFileByMachineAndUser =
+        appSettingsFromJsonFileByMachineAndUser ?? throw new ArgumentNullException(nameof(appSettingsFromJsonFileByMachineAndUser));
 
     /// <inheritdoc />
     public string ValueFor([NotNull] string key)

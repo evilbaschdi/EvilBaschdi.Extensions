@@ -3,20 +3,15 @@
 namespace EvilBaschdi.Settings.DummyApp.Settings;
 
 /// <inheritdoc />
-public class CustomListFromSettings : ICustomListFromSettings
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="appSettingByKey"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class CustomListFromSettings(IAppSettingByKey appSettingByKey) : ICustomListFromSettings
 {
     private const string Key = "CustomList";
-    private readonly IAppSettingByKey _appSettingByKey;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="appSettingByKey"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public CustomListFromSettings(IAppSettingByKey appSettingByKey)
-    {
-        _appSettingByKey = appSettingByKey ?? throw new ArgumentNullException(nameof(appSettingByKey));
-    }
+    private readonly IAppSettingByKey _appSettingByKey = appSettingByKey ?? throw new ArgumentNullException(nameof(appSettingByKey));
 
     /// <inheritdoc cref="string" />
     public List<string> Value

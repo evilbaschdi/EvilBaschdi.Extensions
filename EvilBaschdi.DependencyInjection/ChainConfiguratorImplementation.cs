@@ -4,23 +4,16 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class ChainConfiguratorImplementation<T> : IChainConfigurator<T>
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="services"></param>
+public class ChainConfiguratorImplementation<T>([NotNull] IServiceCollection services) : IChainConfigurator<T>
     where T : class
 {
-    private readonly Type _interfaceType;
-    private readonly IServiceCollection _services;
-    private readonly List<Type> _types;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="services"></param>
-    public ChainConfiguratorImplementation([NotNull] IServiceCollection services)
-    {
-        _services = services ?? throw new ArgumentNullException(nameof(services));
-        _types = new();
-        _interfaceType = typeof(T);
-    }
+    private readonly Type _interfaceType = typeof(T);
+    private readonly IServiceCollection _services = services ?? throw new ArgumentNullException(nameof(services));
+    private readonly List<Type> _types = new();
 
     /// <inheritdoc />
     public IChainConfigurator<T> Add<TImplementation>()

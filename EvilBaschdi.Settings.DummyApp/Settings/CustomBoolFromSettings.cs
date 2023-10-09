@@ -3,20 +3,15 @@
 namespace EvilBaschdi.Settings.DummyApp.Settings;
 
 /// <inheritdoc />
-public class CustomBoolFromSettings : ICustomBoolFromSettings
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="appSettingByKey"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class CustomBoolFromSettings(IAppSettingByKey appSettingByKey) : ICustomBoolFromSettings
 {
     private const string Key = "CustomBool";
-    private readonly IAppSettingByKey _appSettingByKey;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="appSettingByKey"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public CustomBoolFromSettings(IAppSettingByKey appSettingByKey)
-    {
-        _appSettingByKey = appSettingByKey ?? throw new ArgumentNullException(nameof(appSettingByKey));
-    }
+    private readonly IAppSettingByKey _appSettingByKey = appSettingByKey ?? throw new ArgumentNullException(nameof(appSettingByKey));
 
     /// <inheritdoc cref="string" />
     public bool Value

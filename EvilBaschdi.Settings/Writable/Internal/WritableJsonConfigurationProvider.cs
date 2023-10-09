@@ -4,17 +4,12 @@ using Newtonsoft.Json;
 namespace EvilBaschdi.Settings.Writable.Internal;
 
 /// <inheritdoc />
-public class WritableJsonConfigurationProvider : JsonConfigurationProvider
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="source"></param>
+public class WritableJsonConfigurationProvider(JsonConfigurationSource source) : JsonConfigurationProvider(source)
 {
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="source"></param>
-    public WritableJsonConfigurationProvider(JsonConfigurationSource source)
-        : base(source)
-    {
-    }
-
     /// <inheritdoc />
     public override void Set(string key, string value)
     {
