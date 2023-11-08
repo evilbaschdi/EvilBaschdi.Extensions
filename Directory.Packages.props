@@ -4,7 +4,7 @@
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2023.10.9.715-develop" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2023.11.8.1715-develop" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0-rc.2.23479.6" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0-rc.2.23479.6" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0-rc.2.23479.6" />
@@ -17,13 +17,13 @@
   </ItemGroup>
   <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2023.10.9.920-develop" />
-    <PackageVersion Include="FluentAssertions.Analyzers" Version="0.25.0" />
+    <PackageVersion Include="EvilBaschdi.Testing" Version="2023.11.8.1645-develop" />
+    <PackageVersion Include="FluentAssertions.Analyzers" Version="0.26.0" />
     <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.10" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0-preview-23503-02" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0-preview-23531-01" />
     <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.16" />
-    <PackageVersion Include="xunit.analyzers" Version="1.4.0-pre.9" />
-    <PackageVersion Include="xunit.runner.console" Version="2.5.2-pre.6" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.2-pre.8" />
+    <PackageVersion Include="xunit.analyzers" Version="1.4.0" />
+    <PackageVersion Include="xunit.runner.console" Version="2.6.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
 </Project>
