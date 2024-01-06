@@ -9,9 +9,9 @@ namespace EvilBaschdi.DependencyInjection;
 /// <param name="hostInstance"></param>
 /// <param name="configureDelegateForConfigureServices"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class ConfigureServicesByHostBuilderAndConfigureDelegate([NotNull] IHostInstance hostInstance,
-                                                                [NotNull] IConfigureDelegateForConfigureServices configureDelegateForConfigureServices) :
-    IConfigureServicesByHostBuilderAndConfigureDelegate
+public class ConfigureServicesByHostBuilderAndConfigureDelegate(
+    [NotNull] IHostInstance hostInstance,
+    [NotNull] IConfigureDelegateForConfigureServices configureDelegateForConfigureServices) : IConfigureServicesByHostBuilderAndConfigureDelegate
 {
     private readonly IConfigureDelegateForConfigureServices _configureDelegateForConfigureServices =
         configureDelegateForConfigureServices ?? throw new ArgumentNullException(nameof(configureDelegateForConfigureServices));

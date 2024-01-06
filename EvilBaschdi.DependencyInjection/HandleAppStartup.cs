@@ -8,13 +8,16 @@ namespace EvilBaschdi.DependencyInjection;
 /// </summary>
 /// <param name="hostInstance"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class HandleAppStartup<TOut>([NotNull] IHostInstance hostInstance) : IHandleAppStartup<TOut>
+public class HandleAppStartup<TOut>(
+    [NotNull] IHostInstance hostInstance) : IHandleAppStartup<TOut>
 {
     private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
-    public async Task<TOut> ValueFor(IServiceProvider serviceProvider)
+    public async Task<TOut> ValueFor([NotNull] IServiceProvider serviceProvider)
     {
+        ArgumentNullException.ThrowIfNull(serviceProvider);
+
         await _hostInstance.Value.StartAsync();
         var window = serviceProvider.GetRequiredService<TOut>();
 

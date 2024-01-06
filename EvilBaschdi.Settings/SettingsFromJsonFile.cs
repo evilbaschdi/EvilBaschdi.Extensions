@@ -12,10 +12,7 @@ public abstract class SettingsFromJsonFile : CachedValue<IConfiguration>, ISetti
     /// <param name="settingsFileName"></param>
     protected SettingsFromJsonFile([NotNull] string settingsFileName)
     {
-        if (settingsFileName == null)
-        {
-            throw new ArgumentNullException(nameof(settingsFileName));
-        }
+        ArgumentNullException.ThrowIfNull(settingsFileName);
 
         SettingsFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, settingsFileName);
         AppSetting = new ConfigurationBuilder()

@@ -10,8 +10,9 @@ namespace EvilBaschdi.Settings.ByMachineAndUser;
 /// <param name="appSettingsFromJsonFile"></param>
 /// <param name="appSettingsFromJsonFileByMachineAndUser"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJsonFile,
-                             [NotNull] IAppSettingsFromJsonFileByMachineAndUser appSettingsFromJsonFileByMachineAndUser) : IAppSettingByKey
+public class AppSettingByKey(
+    [NotNull] IAppSettingsFromJsonFile appSettingsFromJsonFile,
+    [NotNull] IAppSettingsFromJsonFileByMachineAndUser appSettingsFromJsonFileByMachineAndUser) : IAppSettingByKey
 {
     private readonly IAppSettingsFromJsonFile _appSettingsFromJsonFile = appSettingsFromJsonFile ?? throw new ArgumentNullException(nameof(appSettingsFromJsonFile));
 
@@ -21,10 +22,7 @@ public class AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJ
     /// <inheritdoc />
     public string ValueFor([NotNull] string key)
     {
-        if (key == null)
-        {
-            throw new ArgumentNullException(nameof(key));
-        }
+        ArgumentNullException.ThrowIfNull(key);
 
         var fallbackConfiguration = _appSettingsFromJsonFile.Value;
         var currentConfiguration = _appSettingsFromJsonFileByMachineAndUser.Value;
@@ -41,22 +39,16 @@ public class AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJ
     /// <inheritdoc />
     public void RunFor([NotNull] string key, [NotNull] string value)
     {
-        if (key == null)
-        {
-            throw new ArgumentNullException(nameof(key));
-        }
+        ArgumentNullException.ThrowIfNull(key);
 
         var configuration = _appSettingsFromJsonFileByMachineAndUser.Value;
         configuration[key] = value ?? throw new ArgumentNullException(nameof(value));
     }
 
     /// <inheritdoc />
-    public TOut ValueFor<TOut>(string key)
+    public TOut ValueFor<TOut>([NotNull] string key)
     {
-        if (key is null)
-        {
-            throw new ArgumentNullException(nameof(key));
-        }
+        ArgumentNullException.ThrowIfNull(key);
 
         var fallbackConfiguration = _appSettingsFromJsonFile.Value;
         var currentConfiguration = _appSettingsFromJsonFileByMachineAndUser.Value;
@@ -74,10 +66,7 @@ public class AppSettingByKey([NotNull] IAppSettingsFromJsonFile appSettingsFromJ
     /// <inheritdoc />
     public void RunFor<TIn>(string key, TIn value)
     {
-        if (key is null)
-        {
-            throw new ArgumentNullException(nameof(key));
-        }
+        ArgumentNullException.ThrowIfNull(key);
 
         var settingsFileName = _appSettingsFromJsonFileByMachineAndUser.SettingsFileName;
         var settings = File.ReadAllText(!File.Exists(settingsFileName) ? _appSettingsFromJsonFile.SettingsFileName : settingsFileName);

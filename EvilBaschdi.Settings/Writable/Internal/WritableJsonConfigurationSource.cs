@@ -9,10 +9,7 @@ public class WritableJsonConfigurationSource : JsonConfigurationSource
     /// <inheritdoc />
     public override IConfigurationProvider Build(IConfigurationBuilder builder)
     {
-        if (builder == null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        ArgumentNullException.ThrowIfNull(builder);
 
         EnsureDefaults(builder);
         return new WritableJsonConfigurationProvider(this);

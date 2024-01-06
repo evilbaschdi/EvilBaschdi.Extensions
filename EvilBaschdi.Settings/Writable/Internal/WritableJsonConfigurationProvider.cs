@@ -8,20 +8,15 @@ namespace EvilBaschdi.Settings.Writable.Internal;
 ///     Constructor
 /// </summary>
 /// <param name="source"></param>
-public class WritableJsonConfigurationProvider(JsonConfigurationSource source) : JsonConfigurationProvider(source)
+public class WritableJsonConfigurationProvider(
+    JsonConfigurationSource source) : JsonConfigurationProvider(source)
 {
     /// <inheritdoc />
     public override void Set(string key, string value)
     {
-        if (key == null)
-        {
-            throw new ArgumentNullException(nameof(key));
-        }
+        ArgumentNullException.ThrowIfNull(key);
 
-        if (value == null)
-        {
-            throw new ArgumentNullException(nameof(value));
-        }
+        ArgumentNullException.ThrowIfNull(value);
 
         base.Set(key, value);
 

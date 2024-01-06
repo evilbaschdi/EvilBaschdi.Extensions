@@ -14,10 +14,7 @@ public abstract class WritableSettingsFromJsonFile : ISettingsFromJsonFile
     /// <param name="optional"></param>
     protected WritableSettingsFromJsonFile([NotNull] string settingsFileName, bool optional = false)
     {
-        if (settingsFileName == null)
-        {
-            throw new ArgumentNullException(nameof(settingsFileName));
-        }
+        ArgumentNullException.ThrowIfNull(settingsFileName);
 
         SettingsFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, settingsFileName);
         AppSetting = new ConfigurationBuilder().Add(
