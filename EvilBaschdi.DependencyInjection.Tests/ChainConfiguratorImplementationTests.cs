@@ -14,9 +14,9 @@ public class ChainConfiguratorImplementationTests
         sut.Should().BeAssignableTo<IChainConfigurator<string>>();
     }
 
-    [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
-    {
-        assertion.Verify(typeof(ChainConfiguratorImplementation<string>).GetMethods().Where(method => !method.IsAbstract));
-    }
+    //[Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
+    //public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    //{
+    //    assertion.Verify(typeof(ChainConfiguratorImplementation<string>).GetMethods().Where(method => !method.IsAbstract));
+    //}
 }

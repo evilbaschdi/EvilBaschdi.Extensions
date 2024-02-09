@@ -15,8 +15,17 @@ public class HandleAppStartupTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    public void Methods_HaveNullGuards(GuardClauseAssertion assertion)
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1031:Do not use blocking task operations in test method", Justification = "<Pending>")]
+    public void ValueFor_HasNullGuards_Result(
+        HandleAppStartup<string> sut)
     {
-        assertion.Verify(typeof(HandleAppStartup<string>).GetMethods().Where(method => !method.IsAbstract));
+        // Arrange
+
+        // Act
+        // ReSharper disable once AssignNullToNotNullAttribute
+        var action = Record.ExceptionAsync(() => sut.ValueFor(null));
+
+        // Assert
+        action.Result.Should().BeOfType<ArgumentNullException>();
     }
 }

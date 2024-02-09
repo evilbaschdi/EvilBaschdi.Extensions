@@ -1,6 +1,6 @@
 # EvilBaschdi.Extensions
 
-source code of core assembly.\
+source code of extensions library.\
 MyGet Feed for NuGet Package: <https://www.myget.org/F/evilbaschdi/api/v3/index.json>
 
 | main | develop |
