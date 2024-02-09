@@ -3,19 +3,14 @@
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class HandleAppExit : IHandleAppExit
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="hostInstance"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class HandleAppExit([NotNull] IHostInstance hostInstance) : IHandleAppExit
 {
-    private readonly IHostInstance _hostInstance;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="hostInstance"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public HandleAppExit([NotNull] IHostInstance hostInstance)
-    {
-        _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
-    }
+    private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
     public async Task Value()

@@ -4,23 +4,17 @@ using Microsoft.Extensions.DependencyInjection;
 namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public class ChainConfiguratorImplementation<T> : IChainConfigurator<T>
+/// <summary>
+///     Constructor
+/// </summary>
+/// <param name="services"></param>
+public class ChainConfiguratorImplementation<T>(
+    [NotNull] IServiceCollection services) : IChainConfigurator<T>
     where T : class
 {
-    private readonly Type _interfaceType;
-    private readonly IServiceCollection _services;
-    private readonly List<Type> _types;
-
-    /// <summary>
-    ///     Constructor
-    /// </summary>
-    /// <param name="services"></param>
-    public ChainConfiguratorImplementation([NotNull] IServiceCollection services)
-    {
-        _services = services ?? throw new ArgumentNullException(nameof(services));
-        _types = new();
-        _interfaceType = typeof(T);
-    }
+    private readonly Type _interfaceType = typeof(T);
+    private readonly IServiceCollection _services = services ?? throw new ArgumentNullException(nameof(services));
+    private readonly List<Type> _types = [];
 
     /// <inheritdoc />
     public IChainConfigurator<T> Add<TImplementation>()
@@ -50,10 +44,7 @@ public class ChainConfiguratorImplementation<T> : IChainConfigurator<T>
     /// <inheritdoc />
     public void ConfigureType([NotNull] Type currentType)
     {
-        if (currentType == null)
-        {
-            throw new ArgumentNullException(nameof(currentType));
-        }
+        ArgumentNullException.ThrowIfNull(currentType);
 
         // gets the next type, as that will be injected in the current type
         var nextType = _types.SkipWhile(x => x != currentType).SkipWhile(x => x == currentType).FirstOrDefault();
@@ -72,7 +63,7 @@ public class ChainConfiguratorImplementation<T> : IChainConfigurator<T>
                                                              {
                                                                  // this is a parameter we don't care about, so we just ask GetRequiredService to resolve it for us 
                                                                  return (Expression)Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService",
-                                                                     new[] { p.ParameterType }, parameter);
+                                                                     [p.ParameterType], parameter);
                                                              }
 
                                                              if (nextType is null)
@@ -82,7 +73,7 @@ public class ChainConfiguratorImplementation<T> : IChainConfigurator<T>
                                                              }
 
                                                              // if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us
-                                                             return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new[] { nextType },
+                                                             return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", [nextType],
                                                                  parameter);
                                                          });
 
