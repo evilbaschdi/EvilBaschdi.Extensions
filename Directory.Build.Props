@@ -25,16 +25,12 @@
 		<None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="TestResults\**" />
-		<EmbeddedResource Remove="TestResults\**" />
-		<None Remove="TestResults\**" />
-	</ItemGroup>
-
 	<!-- ReSharper disable once UnknownProperty -->
 	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<NoWarn>1701;1702</NoWarn>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -58,10 +54,22 @@
 		<PackageReference Include="EvilBaschdi.Core" />
 	</ItemGroup>
 
-	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-		<IsPackable>false</IsPackable>
-		<IsTestProject>true</IsTestProject>
-	</PropertyGroup>
+	<Choose>
+		<When Condition="$(MSBuildProjectName.EndsWith('.DependencyInjection'))">
+			<ItemGroup>
+				<PackageReference Include="Microsoft.Extensions.Hosting" />
+				<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+			</ItemGroup>
+		</When>
+		<When Condition="$(MSBuildProjectName.EndsWith('.Settings'))">
+			<ItemGroup>
+				<PackageReference Include="Newtonsoft.Json" />
+				<PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+				<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" />
+				<PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+			</ItemGroup>
+		</When>
+	</Choose>
 
 	<!-- ReSharper disable once UnknownProperty -->
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">

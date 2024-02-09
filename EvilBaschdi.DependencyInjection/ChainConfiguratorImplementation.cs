@@ -44,10 +44,7 @@ public class ChainConfiguratorImplementation<T>(
     /// <inheritdoc />
     public void ConfigureType([NotNull] Type currentType)
     {
-        if (currentType == null)
-        {
-            throw new ArgumentNullException(nameof(currentType));
-        }
+        ArgumentNullException.ThrowIfNull(currentType);
 
         // gets the next type, as that will be injected in the current type
         var nextType = _types.SkipWhile(x => x != currentType).SkipWhile(x => x == currentType).FirstOrDefault();
@@ -66,7 +63,7 @@ public class ChainConfiguratorImplementation<T>(
                                                              {
                                                                  // this is a parameter we don't care about, so we just ask GetRequiredService to resolve it for us 
                                                                  return (Expression)Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService",
-                                                                     new[] { p.ParameterType }, parameter);
+                                                                     [p.ParameterType], parameter);
                                                              }
 
                                                              if (nextType is null)
@@ -76,7 +73,7 @@ public class ChainConfiguratorImplementation<T>(
                                                              }
 
                                                              // if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us
-                                                             return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new[] { nextType },
+                                                             return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", [nextType],
                                                                  parameter);
                                                          });
 
