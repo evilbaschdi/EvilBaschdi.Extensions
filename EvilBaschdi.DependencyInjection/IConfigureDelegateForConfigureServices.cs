@@ -5,6 +5,4 @@ namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
 // ReSharper disable once UnusedType.Global
-public interface IConfigureDelegateForConfigureServices : IRunFor2<HostBuilderContext, IServiceCollection>
-{
-}
+public interface IConfigureDelegateForConfigureServices : IRunFor2<HostBuilderContext, IServiceCollection>;

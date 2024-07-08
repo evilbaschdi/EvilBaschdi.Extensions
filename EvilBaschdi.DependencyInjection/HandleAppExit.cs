@@ -8,7 +8,8 @@ namespace EvilBaschdi.DependencyInjection;
 /// </summary>
 /// <param name="hostInstance"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class HandleAppExit([NotNull] IHostInstance hostInstance) : IHandleAppExit
+public class HandleAppExit(
+    [NotNull] IHostInstance hostInstance) : IHandleAppExit
 {
     private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
