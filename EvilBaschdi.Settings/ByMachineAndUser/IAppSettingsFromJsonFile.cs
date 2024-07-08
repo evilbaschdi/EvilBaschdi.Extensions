@@ -1,6 +1,4 @@
 ﻿namespace EvilBaschdi.Settings.ByMachineAndUser;
 
 /// <inheritdoc />
-public interface IAppSettingsFromJsonFile : ISettingsFromJsonFile
-{
-}
+public interface IAppSettingsFromJsonFile : ISettingsFromJsonFile;

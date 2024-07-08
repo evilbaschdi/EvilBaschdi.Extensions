@@ -8,7 +8,8 @@ namespace EvilBaschdi.Settings.DummyApp.Settings;
 /// </summary>
 /// <param name="appSettingByKey"></param>
 /// <exception cref="ArgumentNullException"></exception>
-public class CustomBoolFromSettings(IAppSettingByKey appSettingByKey) : ICustomBoolFromSettings
+public class CustomBoolFromSettings(
+    IAppSettingByKey appSettingByKey) : ICustomBoolFromSettings
 {
     private const string Key = "CustomBool";
     private readonly IAppSettingByKey _appSettingByKey = appSettingByKey ?? throw new ArgumentNullException(nameof(appSettingByKey));
