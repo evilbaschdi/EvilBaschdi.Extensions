@@ -34,6 +34,10 @@
 		<PackageReference Include="EvilBaschdi.Core" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" />
+	</ItemGroup>
+
 	<Choose>
 		<When Condition="$(MSBuildProjectName.EndsWith('.DependencyInjection'))">
 			<ItemGroup>
