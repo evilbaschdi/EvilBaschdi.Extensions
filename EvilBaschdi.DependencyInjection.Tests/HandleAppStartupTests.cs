@@ -1,4 +1,6 @@
-﻿namespace EvilBaschdi.DependencyInjection.Tests;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace EvilBaschdi.DependencyInjection.Tests;
 
 public class HandleAppStartupTests
 {
@@ -15,7 +17,7 @@ public class HandleAppStartupTests
     }
 
     [Theory, NSubstituteOmitAutoPropertiesTrueAutoData]
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "xUnit1031:Do not use blocking task operations in test method", Justification = "<Pending>")]
+    [SuppressMessage("Usage", "xUnit1031:Do not use blocking task operations in test method", Justification = "<Pending>")]
     public void ValueFor_HasNullGuards_Result(
         HandleAppStartup<string> sut)
     {
