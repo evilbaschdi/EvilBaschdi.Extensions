@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\EvilBaschdi.Core.Settings\EvilBaschdi.Core.Settings.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="KeyValue.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<Compile Update="KeyValue.cs">
+			<DependentUpon>KeyValue.json</DependentUpon>
+		</Compile>
+		<None Update="KeyValueList.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<Compile Update="KeyValueList.cs">
+			<DependentUpon>KeyValueList.json</DependentUpon>
+		</Compile>
+		<None Update="Settings\App.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
