@@ -1,4 +1,4 @@
 ﻿namespace EvilBaschdi.DependencyInjection;
 
 /// <inheritdoc />
-public interface IHandleAppExit : ITaskFromMethod;
+public interface IHandleAppExit : ITaskRun;

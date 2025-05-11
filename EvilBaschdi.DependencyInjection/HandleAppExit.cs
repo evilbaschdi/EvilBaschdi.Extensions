@@ -14,7 +14,7 @@ public class HandleAppExit(
     private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
-    public async Task Value()
+    public async Task RunAsync()
     {
         await _hostInstance.Value.StopAsync(TimeSpan.FromSeconds(5));
 

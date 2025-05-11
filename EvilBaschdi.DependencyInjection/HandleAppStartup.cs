@@ -14,7 +14,7 @@ public class HandleAppStartup<TOut>(
     private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
-    public async Task<TOut> ValueFor([NotNull] IServiceProvider serviceProvider)
+    public async Task<TOut> ValueForAsync([NotNull] IServiceProvider serviceProvider)
     {
         ArgumentNullException.ThrowIfNull(serviceProvider);
 
