@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
-
-namespace EvilBaschdi.Core.DependencyInjection;
+﻿namespace EvilBaschdi.Core.DependencyInjection;
 
 /// <inheritdoc />
 /// <summary>
@@ -14,9 +12,9 @@ public class HandleAppExit(
     private readonly IHostInstance _hostInstance = hostInstance ?? throw new ArgumentNullException(nameof(hostInstance));
 
     /// <inheritdoc />
-    public async Task RunAsync()
+    public async Task RunAsync(CancellationToken cancellationToken = default)
     {
-        await _hostInstance.Value.StopAsync(TimeSpan.FromSeconds(5));
+        await _hostInstance.Value.StopAsync(cancellationToken);
 
         _hostInstance.Value.Dispose();
     }
