@@ -45,7 +45,6 @@
 		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Settings'))">
 			<ItemGroup>
-				<PackageReference Include="Newtonsoft.Json" />
 				<PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
 				<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" />
 				<PackageReference Include="Microsoft.Extensions.Configuration.Json" />
