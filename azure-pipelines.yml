@@ -18,6 +18,8 @@ resources:
 extends:
   template: buildNPackMultiStage.yml@templates  # Template reference
   parameters:
-    projectName: '*'
+    projects:
+      - EvilBaschdi.Core.DependencyInjection
+      - EvilBaschdi.Core.Settings
     framework: net10.0
     projectParentDirectory: ''
