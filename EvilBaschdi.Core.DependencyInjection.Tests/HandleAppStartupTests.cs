@@ -25,7 +25,7 @@ public class HandleAppStartupTests
 
         // Act
         // ReSharper disable once AssignNullToNotNullAttribute
-        var action = Record.ExceptionAsync(() => sut.ValueForAsync(null));
+        var action = Record.ExceptionAsync(() => sut.ValueForAsync(null, TestContext.Current.CancellationToken));
 
         // Assert
         action.Result.Should().BeOfType<ArgumentNullException>();
