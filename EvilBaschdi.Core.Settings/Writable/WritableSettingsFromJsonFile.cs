@@ -1,5 +1,5 @@
-﻿using EvilBaschdi.Core.Settings.Writable.Internal;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace EvilBaschdi.Core.Settings.Writable;
 
@@ -18,14 +18,14 @@ public abstract class WritableSettingsFromJsonFile : ISettingsFromJsonFile
 
         SettingsFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, settingsFileName);
         AppSetting = new ConfigurationBuilder().Add(
-            (Action<WritableJsonConfigurationSource>)(s =>
-                                                      {
-                                                          s.FileProvider = null;
-                                                          s.Path = settingsFileName;
-                                                          s.Optional = optional;
-                                                          s.ReloadOnChange = true;
-                                                          s.ResolveFileProvider();
-                                                      })).Build();
+            (Action<JsonConfigurationSource>)(s =>
+                                              {
+                                                  s.FileProvider = null;
+                                                  s.Path = settingsFileName;
+                                                  s.Optional = optional;
+                                                  s.ReloadOnChange = true;
+                                                  s.ResolveFileProvider();
+                                              })).Build();
     }
 
     private IConfiguration AppSetting { get; }

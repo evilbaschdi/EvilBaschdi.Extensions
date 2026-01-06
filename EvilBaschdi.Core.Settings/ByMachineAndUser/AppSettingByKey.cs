@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json.Linq;
+﻿using System.Text.Json;
+using System.Text.Json.Nodes;
+using Microsoft.Extensions.Configuration;
 
 namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
 
@@ -35,16 +36,6 @@ public class AppSettingByKey(
             : fallbackValue;
     }
 
-    /// <exception cref="ArgumentNullException"></exception>
-    /// <inheritdoc />
-    public void RunFor([NotNull] string key, [NotNull] string value)
-    {
-        ArgumentNullException.ThrowIfNull(key);
-
-        var configuration = _appSettingsFromJsonFileByMachineAndUser.Value;
-        configuration[key] = value ?? throw new ArgumentNullException(nameof(value));
-    }
-
     /// <inheritdoc />
     public TOut ValueFor<TOut>([NotNull] string key)
     {
@@ -71,12 +62,21 @@ public class AppSettingByKey(
         var settingsFileName = _appSettingsFromJsonFileByMachineAndUser.SettingsFileName;
         var settings = File.ReadAllText(!File.Exists(settingsFileName) ? _appSettingsFromJsonFile.SettingsFileName : settingsFileName);
 
-        var jObject = JObject.Parse(settings);
-        jObject[key] = JToken.FromObject(value);
+        var jsonObject = JsonNode.Parse(settings)?.AsObject();
 
-        if (settingsFileName != null)
+        if (jsonObject == null)
         {
-            File.WriteAllText(settingsFileName, jObject.ToString());
+            return;
         }
+
+        jsonObject[key] = JsonSerializer.SerializeToNode(value);
+
+        if (string.IsNullOrWhiteSpace(settingsFileName))
+        {
+            return;
+        }
+
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        File.WriteAllText(settings, jsonObject.ToJsonString(options));
     }
 }
