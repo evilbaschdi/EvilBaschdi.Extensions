@@ -2,7 +2,7 @@
 
 /// <inheritdoc cref="IValueFor{TIn,TOut}" />
 /// <inheritdoc cref="IRunFor2{TIn,TOut}" />
-public interface IAppSettingByKey : IValueFor<string, string>, IRunFor2<string, string>
+public interface IAppSettingByKey : IValueFor<string, string>
 {
     /// <summary>Value</summary>
     // ReSharper disable once UnusedMember.Global

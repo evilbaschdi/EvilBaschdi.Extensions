@@ -15,6 +15,9 @@ class Program
         IAppSettingsFromJsonFileByMachineAndUser appSettingsFromJsonFileByMachineAndUser = new AppSettingsFromJsonFileByMachineAndUser();
         IAppSettingByKey appSettingByKey = new AppSettingByKey(appSettingsFromJsonFile, appSettingsFromJsonFileByMachineAndUser);
 
+        IAppSettingsFromJsonFileByMachineAndUser dummyAppSettingsFromJsonFileByMachineAndUser = new DummyAppSettingsFromJsonFileByMachineAndUser();
+        IAppSettingByKey dummyApSettingByKey = new AppSettingByKey(appSettingsFromJsonFile, dummyAppSettingsFromJsonFileByMachineAndUser);
+
         //var keyValueConfiguration = KeyValue.AppSetting;
         //Console.WriteLine(keyValueConfiguration["Black"]);
         //Console.WriteLine();
@@ -51,6 +54,8 @@ class Program
         temp.Add("Something2");
         customListFromSettings.Value = temp;
         customBoolFromSettings.Value = true;
+        Console.WriteLine(appSettingByKey.ValueFor("Custom"));
+        appSettingByKey.RunFor("Custom", DateTime.UtcNow.ToString("O"));
 
         foreach (var item in customListFromSettings.Value)
         {
@@ -59,7 +64,10 @@ class Program
 
         Console.WriteLine(customBoolFromSettings.Value);
 
+        dummyApSettingByKey.RunFor("Dummy", DateTime.UtcNow.ToString("O"));
+
         Console.WriteLine("---");
+
         Console.ReadLine();
     }
 }

@@ -1,5 +1,5 @@
-﻿using EvilBaschdi.Core.Settings.Writable.Internal;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace EvilBaschdi.Core.Settings.DummyApp;
 
@@ -11,14 +11,14 @@ public static class KeyValue
     static KeyValue()
     {
         AppSetting = new ConfigurationBuilder().Add(
-            (Action<WritableJsonConfigurationSource>)(s =>
-                                                      {
-                                                          s.FileProvider = null;
-                                                          s.Path = "KeyValue.json";
-                                                          s.Optional = false;
-                                                          s.ReloadOnChange = true;
-                                                          s.ResolveFileProvider();
-                                                      })).Build();
+            (Action<JsonConfigurationSource>)(s =>
+                                              {
+                                                  s.FileProvider = null;
+                                                  s.Path = "KeyValue.json";
+                                                  s.Optional = false;
+                                                  s.ReloadOnChange = true;
+                                                  s.ResolveFileProvider();
+                                              })).Build();
     }
 
     /// <summary>
