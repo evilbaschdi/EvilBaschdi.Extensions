@@ -59,8 +59,9 @@ public class AppSettingByKey(
     {
         ArgumentNullException.ThrowIfNull(key);
 
-        var settingsFileName = _appSettingsFromJsonFileByMachineAndUser.SettingsFileName;
-        var settings = File.ReadAllText(!File.Exists(settingsFileName) ? _appSettingsFromJsonFile.SettingsFileName : settingsFileName);
+        var settingsFileNameByMachineAndUser = _appSettingsFromJsonFileByMachineAndUser.SettingsFileName;
+        var settingsFileName = !File.Exists(settingsFileNameByMachineAndUser) ? _appSettingsFromJsonFile.SettingsFileName : settingsFileNameByMachineAndUser;
+        var settings = File.ReadAllText(settingsFileName);
 
         var jsonObject = JsonNode.Parse(settings)?.AsObject();
 
@@ -71,12 +72,12 @@ public class AppSettingByKey(
 
         jsonObject[key] = JsonSerializer.SerializeToNode(value);
 
-        if (string.IsNullOrWhiteSpace(settingsFileName))
+        if (string.IsNullOrWhiteSpace(settingsFileNameByMachineAndUser))
         {
             return;
         }
 
         var options = new JsonSerializerOptions { WriteIndented = true };
-        File.WriteAllText(settings, jsonObject.ToJsonString(options));
+        File.WriteAllText(settingsFileNameByMachineAndUser, jsonObject.ToJsonString(options));
     }
 }

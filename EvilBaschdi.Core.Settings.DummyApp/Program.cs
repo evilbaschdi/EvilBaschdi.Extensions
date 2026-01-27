@@ -65,6 +65,7 @@ class Program
         Console.WriteLine(customBoolFromSettings.Value);
 
         dummyApSettingByKey.RunFor("Dummy", DateTime.UtcNow.ToString("O"));
+        dummyApSettingByKey.RunFor("InitialDirectory", "C:\\Temp");
 
         Console.WriteLine("---");
 
