@@ -1,5 +1,6 @@
-# EvilBaschdi.Extensions
+# EvilBaschdi.Extensions
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 source code of extensions library.\
 MyGet Feed for NuGet Package: <https://www.myget.org/F/evilbaschdi/api/v3/index.json>
 
