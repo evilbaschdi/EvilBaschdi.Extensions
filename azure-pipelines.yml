@@ -22,5 +22,5 @@ extends:
       - EvilBaschdi.Core.DependencyInjection
       - EvilBaschdi.Core.Settings
     framework: net10.0
-    projectsParentDirectory: "src"
-    testsParentDirectory: "tests"
+    projectsParentDirectory: src/
+    testsParentDirectory: tests/
