@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\EvilBaschdi.Core.Settings\EvilBaschdi.Core.Settings.csproj" />
+		<ProjectReference Include="..\..\src\EvilBaschdi.Core.Settings\EvilBaschdi.Core.Settings.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

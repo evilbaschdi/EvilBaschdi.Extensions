@@ -6,7 +6,7 @@
 trigger:
   branches:
     include:
-      - '*'
+      - "*"
 
 resources:
   repositories:
@@ -16,10 +16,11 @@ resources:
       ref: refs/heads/main # optional ref to pin to
 
 extends:
-  template: buildNPackMultiStage.yml@templates  # Template reference
+  template: buildNPackMultiStage.yml@templates # Template reference
   parameters:
     projects:
       - EvilBaschdi.Core.DependencyInjection
       - EvilBaschdi.Core.Settings
     framework: net10.0
-    projectParentDirectory: ''
+    projectsParentDirectory: "src"
+    testsParentDirectory: "tests"

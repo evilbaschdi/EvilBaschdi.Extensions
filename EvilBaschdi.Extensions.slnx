@@ -10,11 +10,15 @@
     <File Path="global.json" />
     <File Path="NuGet.config" />
   </Folder>
-  <Folder Name="/Tests/">
-    <Project Path="EvilBaschdi.Core.DependencyInjection.Tests/EvilBaschdi.Core.DependencyInjection.Tests.csproj" />
-    <Project Path="EvilBaschdi.Core.Settings.Tests/EvilBaschdi.Core.Settings.Tests.csproj" />
+  <Folder Name="/samples/">
+    <Project Path="samples/EvilBaschdi.Core.Settings.DummyApp/EvilBaschdi.Core.Settings.DummyApp.csproj" />
   </Folder>
-  <Project Path="EvilBaschdi.Core.DependencyInjection/EvilBaschdi.Core.DependencyInjection.csproj" />
-  <Project Path="EvilBaschdi.Core.Settings.DummyApp/EvilBaschdi.Core.Settings.DummyApp.csproj" />
-  <Project Path="EvilBaschdi.Core.Settings/EvilBaschdi.Core.Settings.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/EvilBaschdi.Core.DependencyInjection/EvilBaschdi.Core.DependencyInjection.csproj" />
+    <Project Path="src/EvilBaschdi.Core.Settings/EvilBaschdi.Core.Settings.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EvilBaschdi.Core.DependencyInjection.Tests/EvilBaschdi.Core.DependencyInjection.Tests.csproj" />
+    <Project Path="tests/EvilBaschdi.Core.Settings.Tests/EvilBaschdi.Core.Settings.Tests.csproj" />
+  </Folder>
 </Solution>
