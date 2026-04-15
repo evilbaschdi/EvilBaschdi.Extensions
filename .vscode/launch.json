@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/EvilBaschdi.Core.Settings.DummyApp/bin/Debug/net7.0/EvilBaschdi.Core.Settings.DummyApp.dll",
+            "program": "${workspaceFolder}/samples/EvilBaschdi.Core.Settings.DummyApp/bin/Debug/net7.0/EvilBaschdi.Core.Settings.DummyApp.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/EvilBaschdi.Core.Settings.DummyApp",
+            "cwd": "${workspaceFolder}/samples/EvilBaschdi.Core.Settings.DummyApp",
             "console": "internalConsole",
             "stopAtEntry": false
         },

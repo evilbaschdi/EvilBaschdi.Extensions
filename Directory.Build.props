@@ -55,10 +55,8 @@
 				<GenerateDocumentationFile>False</GenerateDocumentationFile>
 				<IsPackable>false</IsPackable>
 				<IsTestProject>true</IsTestProject>
-				<NoWarn>1701;1702;CA1062</NoWarn>
+				<NoWarn>1701;1702</NoWarn>
 				<OutputType>Exe</OutputType>
-				<!--<IsTestingPlatformApplication>false</IsTestingPlatformApplication>
-				<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>-->
 			</PropertyGroup>
 
 			<ItemGroup>
@@ -66,7 +64,7 @@
 				<Using Include="AutoFixture.Xunit3" />
 				<Using Include="EvilBaschdi.Testing" />
 				<Using Include="FluentAssertions" />
-				<Using Include="FluentAssertions.Microsoft.Extensions.DependencyInjection" />
+				<Using Include="EvilBaschdi.Testing.FluentAssertions.Microsoft.Extensions.DependencyInjection" />
 				<Using Include="NSubstitute" />
 				<Using Include="NSubstitute.ReturnsExtensions" />
 				<Using Include="Xunit" />
@@ -74,7 +72,7 @@
 
 			<ItemGroup>
 				<PackageReference Include="EvilBaschdi.Testing" />
-				<PackageReference Include="xunit.v3" />
+				<PackageReference Include="xunit.v3.mtp-v2" />
 				<PackageReference Include="Microsoft.NET.Test.Sdk" />
 				<PackageReference Include="coverlet.collector">
 					<PrivateAssets>all</PrivateAssets>
@@ -106,7 +104,7 @@
 
 	<!-- ReSharper disable once UnknownProperty -->
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-		<ProjectReference Include="..\$(MSBuildProjectName.Replace('.Tests',''))\$(MSBuildProjectName.Replace('.Tests','')).csproj" />
+		<ProjectReference Include="..\..\src\$(MSBuildProjectName.Replace('.Tests',''))\$(MSBuildProjectName.Replace('.Tests','')).csproj" />
 	</ItemGroup>
 
 </Project>
