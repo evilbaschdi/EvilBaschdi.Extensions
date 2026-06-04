@@ -64,16 +64,10 @@ Conditional Global Usings:
 - `.Settings` projects: `Microsoft.Extensions.Configuration.Binder`, `Microsoft.Extensions.Configuration.FileExtensions`, `Microsoft.Extensions.Configuration.Json`
 - `.Tests` projects: `AutoFixture.Idioms`, `AutoFixture.Xunit3`, `EvilBaschdi.Testing`, `FluentAssertions`, `NSubstitute`, `Xunit`, etc.
 
-## Naming Conventions
+## Naming Conventions & File Organization
 
 - Private fields: `_fieldName` (underscore prefix, camelCase)
-- Public properties/methods: `PropertyName` / `MethodName` (PascalCase)
+- Public properties: `PropertyName` (PascalCase)
 - Local variables: `variableName` (camelCase)
-- Classes follow their interface: `IMyInterface` → `MyInterface`
-
-## Testing Standards
-
-- Use XUnit v3 with NSubstitute and AutoFixture.
-- Use `[Theory, NSubstituteOmitAutoPropertiesTrueAutoData]` for data-driven tests.
-- Verify constructor and method null guards using `GuardClauseAssertion`.
-- Use FluentAssertions for assertions (e.g., `sut.Should().BeAssignableTo<IInterface>();`).
+- Classes follow their interface: `IParseVmxFile` → `ParseVmxFile`
+- **File naming**: One file per type. `IParseVmxFile.cs` for the interface, `ParseVmxFile.cs` for the implementation.

@@ -15,7 +15,9 @@ public class DoNotDeleteDummyTests
         // Assert
         // Use FluentAssertions equivalent
 #pragma warning disable MFA001
+#pragma warning disable FAA0002 // Replace Xunit assertion with Fluent Assertions equivalent
         Assert.Equal(1, 1);
+#pragma warning restore FAA0002 // Replace Xunit assertion with Fluent Assertions equivalent
 #pragma warning restore MFA001
         // Use FluentAssertions equivalent
     }

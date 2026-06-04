@@ -15,10 +15,12 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/EvilBaschdi.Core.DependencyInjection/EvilBaschdi.Core.DependencyInjection.csproj" />
+    <Project Path="src/EvilBaschdi.Core.Logging/EvilBaschdi.Core.Logging.csproj" />
     <Project Path="src/EvilBaschdi.Core.Settings/EvilBaschdi.Core.Settings.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/EvilBaschdi.Core.DependencyInjection.Tests/EvilBaschdi.Core.DependencyInjection.Tests.csproj" />
+    <Project Path="tests/EvilBaschdi.Core.Logging.Tests/EvilBaschdi.Core.Logging.Tests.csproj" />
     <Project Path="tests/EvilBaschdi.Core.Settings.Tests/EvilBaschdi.Core.Settings.Tests.csproj" />
   </Folder>
 </Solution>

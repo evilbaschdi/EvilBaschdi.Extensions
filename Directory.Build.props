@@ -43,6 +43,11 @@
 				<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
 			</ItemGroup>
 		</When>
+		<When Condition="$(MSBuildProjectName.EndsWith('.Logging'))">
+			<ItemGroup>
+				<PackageReference Include="Microsoft.Extensions.Logging" />
+			</ItemGroup>
+		</When>
 		<When Condition="$(MSBuildProjectName.EndsWith('.Settings'))">
 			<ItemGroup>
 				<PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
