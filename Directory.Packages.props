@@ -5,7 +5,7 @@
   </PropertyGroup>
   <!-- #region Project Libs -->
   <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2026.6.4.9-develop" />
+    <PackageVersion Include="EvilBaschdi.Core" Version="2026.6.4.13" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.8" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.8" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.8" />
