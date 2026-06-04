@@ -1,30 +1,30 @@
 <Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
-  </PropertyGroup>
-  <!-- #region Project Libs -->
-  <ItemGroup>
-    <PackageVersion Include="EvilBaschdi.Core" Version="2026.6.4.9-develop" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.8" />
-  </ItemGroup>
-  <!-- #endregion Project Libs -->
-  <!-- #region Unit Test Libs -->
-  <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
-    <PackageVersion Include="coverlet.collector" Version="10.0.1" />
-    <PackageVersion Include="EvilBaschdi.Testing" Version="2026.5.12.19" />
-    <PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
-    <PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
-    <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
-    <PackageVersion Include="xunit.v3.mtp-v2" Version="3.2.2" />
-    <PackageVersion Include="xunit.analyzers" Version="1.27.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
-  </ItemGroup>
-  <!-- #endregion Unit Test Libs -->
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+	</PropertyGroup>
+	<!-- #region Project Libs -->
+	<ItemGroup>
+		<PackageVersion Include="EvilBaschdi.Core" Version="2026.6.4.9-develop" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.8" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.8" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.8" />
+		<PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.8" />
+		<PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.8" />
+		<PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.8" />
+	</ItemGroup>
+	<!-- #endregion Project Libs -->
+	<!-- #region Unit Test Libs -->
+	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+		<PackageVersion Include="coverlet.collector" Version="10.0.1" />
+		<PackageVersion Include="EvilBaschdi.Testing" Version="2026.5.12.19" />
+		<PackageVersion Include="FluentAssertions.Analyzers" Version="0.34.1" />
+		<PackageVersion Include="Meziantou.FluentAssertionsAnalyzers" Version="1.0.22" />
+		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
+		<PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
+		<PackageVersion Include="xunit.v3.mtp-v2" Version="3.2.2" />
+		<PackageVersion Include="xunit.analyzers" Version="1.27.0" />
+		<PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+	</ItemGroup>
+	<!-- #endregion Unit Test Libs -->
 </Project>
