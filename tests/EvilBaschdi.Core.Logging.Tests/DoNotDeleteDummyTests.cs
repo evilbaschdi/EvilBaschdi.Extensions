@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.DependencyInjection.Tests;
+﻿namespace EvilBaschdi.Core.Logging.Tests;
 
 /// <summary>
 ///     Do not delete this class.
