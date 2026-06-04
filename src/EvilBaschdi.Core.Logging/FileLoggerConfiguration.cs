@@ -5,20 +5,30 @@ namespace EvilBaschdi.Core.Logging;
 /// <summary>
 ///     Generic configuration for file-based logging that can be reused across different applications and libraries.
 /// </summary>
-public class FileLoggerConfiguration
+public class FileLoggerConfiguration : IFileLoggerConfiguration
 {
+    private string _logDirectory = Path.Combine(AppContext.BaseDirectory, "logs");
     /// <summary>
     ///     Gets or sets the base directory where logs will be stored.
     ///     Defaults to {AppContext.BaseDirectory}/logs
     /// </summary>
-    public string LogDirectory { get; set; } = Path.Combine(AppContext.BaseDirectory, "logs");
+    public string LogDirectory
+    {
+        get => _logDirectory;
+        set => _logDirectory = value ?? throw new ArgumentNullException(nameof(value));
+    }
 
+    private string _logFileNamePattern = "app-{date}.log";
     /// <summary>
     ///     Gets or sets the log file name pattern.
     ///     Use {date} as a placeholder for the timestamp based on <see cref="LogInterval" />.
     ///     Example: "myapp-{date}.log"
     /// </summary>
-    public string LogFileNamePattern { get; set; } = "app-{date}.log";
+    public string LogFileNamePattern
+    {
+        get => _logFileNamePattern;
+        set => _logFileNamePattern = value ?? throw new ArgumentNullException(nameof(value));
+    }
 
     /// <summary>
     ///     Gets or sets the log interval.
@@ -37,11 +47,16 @@ public class FileLoggerConfiguration
     /// </summary>
     public LogLevel MinimumLogLevel { get; set; } = LogLevel.Debug;
 
+    private string _headline;
     /// <summary>
     ///     Gets or sets the headline for the log file.
     ///     If provided, it will be written as the first line of a new log file.
     /// </summary>
-    public string Headline { get; set; }
+    public string Headline
+    {
+        get => _headline;
+        set => _headline = value ?? throw new ArgumentNullException(nameof(value));
+    }
 
     /// <summary>
     ///     Gets or sets a value indicating whether to include the timestamp in the log entry.
@@ -114,6 +129,7 @@ public class FileLoggerConfiguration
     /// </summary>
     public void Configure(ILoggingBuilder builder)
     {
+        ArgumentNullException.ThrowIfNull(builder);
         builder.ClearProviders();
         builder.SetMinimumLevel(MinimumLogLevel);
 #pragma warning disable CA2000

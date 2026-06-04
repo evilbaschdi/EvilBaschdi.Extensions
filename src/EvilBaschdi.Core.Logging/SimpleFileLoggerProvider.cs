@@ -9,7 +9,7 @@ namespace EvilBaschdi.Core.Logging;
 public sealed class SimpleFileLoggerProvider(
     string logFilePath,
     LogLevel minimumLogLevel = LogLevel.Debug,
-    string headline = null,
+    string headline = "",
     bool includeTimestamp = true,
     bool includeLogLevel = true) : ILoggerProvider
 {
@@ -17,7 +17,7 @@ public sealed class SimpleFileLoggerProvider(
 
     // ReSharper disable ReplaceWithPrimaryConstructorParameter
     private readonly LogLevel _minimumLogLevel = minimumLogLevel;
-    private readonly string _headline = headline;
+    private readonly string _headline = headline ?? throw new ArgumentNullException(nameof(headline));
     private readonly bool _includeTimestamp = includeTimestamp;
     private readonly bool _includeLogLevel = includeLogLevel;
     // ReSharper restore ReplaceWithPrimaryConstructorParameter
@@ -25,7 +25,11 @@ public sealed class SimpleFileLoggerProvider(
     private readonly object _lockObject = new();
 
     /// <inheritdoc />
-    public ILogger CreateLogger(string categoryName) => new SimpleFileLogger(_logFilePath, _minimumLogLevel, _lockObject, _headline, _includeTimestamp, _includeLogLevel);
+    public ILogger CreateLogger(string categoryName)
+    {
+        ArgumentNullException.ThrowIfNull(categoryName);
+        return new SimpleFileLogger(_logFilePath, _minimumLogLevel, _lockObject, _headline, _includeTimestamp, _includeLogLevel);
+    }
 
     /// <inheritdoc />
     public void Dispose()

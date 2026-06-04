@@ -13,6 +13,8 @@ public static class ConfigureFileLogger
     /// </summary>
     public static void AddFileLoggerConfiguration(this ILoggingBuilder builder, FileLoggerConfiguration config)
     {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(config);
         config.Configure(builder);
     }
 }

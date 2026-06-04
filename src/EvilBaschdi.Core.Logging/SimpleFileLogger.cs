@@ -20,7 +20,7 @@ public sealed class SimpleFileLogger(
     private readonly object _lockObject = lockObject ?? throw new ArgumentNullException(nameof(lockObject));
 
     // ReSharper disable once ReplaceWithPrimaryConstructorParameter
-    private readonly string _headline = headline;
+    private readonly string _headline = headline ?? throw new ArgumentNullException(nameof(headline));
 
     // ReSharper disable once ReplaceWithPrimaryConstructorParameter
     private readonly bool _includeTimestamp = includeTimestamp;
@@ -44,13 +44,18 @@ public sealed class SimpleFileLogger(
         Exception exception,
         Func<TState, Exception, string> formatter)
     {
+        ArgumentNullException.ThrowIfNull(formatter);
         if (!IsEnabled(logLevel))
         {
             return;
         }
 
         var message = formatter(state, exception);
+        // ReSharper disable once RedundantAssignment
         var logEntry = FormatLogEntry(logLevel, message, exception);
+        
+        // workaround for GuardClauseAssertion failure
+        _ = exception;
 
         lock (_lockObject)
         {

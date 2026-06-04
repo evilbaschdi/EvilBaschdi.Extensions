@@ -197,3 +197,4 @@ FakesAssemblies/
 
 .fake
 .ionide
+*.lutconfig

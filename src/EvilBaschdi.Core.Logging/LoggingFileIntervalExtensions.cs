@@ -10,9 +10,11 @@ public static class LoggingFileIntervalExtensions
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    public static LoggingFileInterval ToLoggingFileInterval(this string value)
+    public static LoggingFileInterval ToLoggingFileInterval([NotNull] this string value)
     {
-        return value?.ToLower() switch
+        ArgumentNullException.ThrowIfNull(value);
+
+        return value.ToLower() switch
         {
             "per minute" => LoggingFileInterval.PerMinute,
             "per hour" => LoggingFileInterval.PerHour,
