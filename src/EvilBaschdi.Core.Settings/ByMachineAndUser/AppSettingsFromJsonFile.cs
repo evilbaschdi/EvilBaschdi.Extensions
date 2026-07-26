@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Settings.Writable;
+using EvilBaschdi.Core.Settings.Writable;
 
 namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
 

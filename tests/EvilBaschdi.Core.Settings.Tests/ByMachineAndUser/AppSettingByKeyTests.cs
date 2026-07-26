@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Settings.ByMachineAndUser;
+using EvilBaschdi.Core.Settings.ByMachineAndUser;
 
 namespace EvilBaschdi.Core.Settings.Tests.ByMachineAndUser;
 

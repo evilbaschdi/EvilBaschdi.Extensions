@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Logging.Tests;
+namespace EvilBaschdi.Core.Logging.Tests;
 
 public class LoggingFileIntervalExtensionsTests
 {

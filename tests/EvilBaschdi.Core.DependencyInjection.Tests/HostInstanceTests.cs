@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.DependencyInjection.Tests;
+namespace EvilBaschdi.Core.DependencyInjection.Tests;
 
 public class HostInstanceTests
 {

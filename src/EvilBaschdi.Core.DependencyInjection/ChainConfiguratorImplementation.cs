@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EvilBaschdi.Core.DependencyInjection;

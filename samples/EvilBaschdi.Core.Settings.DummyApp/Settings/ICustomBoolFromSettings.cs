@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Settings.DummyApp.Settings;
+namespace EvilBaschdi.Core.Settings.DummyApp.Settings;
 
 /// <inheritdoc />
 public interface ICustomBoolFromSettings : IWritableValue<bool>;
