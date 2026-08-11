@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
+namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
 
 /// <inheritdoc />
 public interface IAppSettingsFromJsonFileByMachineAndUser : ISettingsFromJsonFile;

@@ -1,4 +1,4 @@
-﻿using EvilBaschdi.Core.Settings.ByMachineAndUser;
+using EvilBaschdi.Core.Settings.ByMachineAndUser;
 using EvilBaschdi.Core.Settings.DummyApp.Settings;
 
 namespace EvilBaschdi.Core.Settings.DummyApp;

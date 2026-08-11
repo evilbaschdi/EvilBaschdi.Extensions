@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Settings.Tests;
+namespace EvilBaschdi.Core.Settings.Tests;
 
 public class SettingsFromJsonFileTests
 {

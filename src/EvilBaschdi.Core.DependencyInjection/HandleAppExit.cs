@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.DependencyInjection;
+namespace EvilBaschdi.Core.DependencyInjection;
 
 /// <inheritdoc />
 /// <summary>

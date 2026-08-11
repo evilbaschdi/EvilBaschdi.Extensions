@@ -1,4 +1,4 @@
-﻿namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
+namespace EvilBaschdi.Core.Settings.ByMachineAndUser;
 
 /// <inheritdoc cref="IValueFor{TIn,TOut}" />
 /// <inheritdoc cref="IRunFor2{TIn,TOut}" />
