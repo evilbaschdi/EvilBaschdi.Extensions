@@ -27,10 +27,10 @@ Default by `NuGet.config` is myget.org
 | ![Main Branch][mainBranchBadge]       | ![MyGet Version DependencyInjection][myGetVersionDependencyInjectionMain]    |
 | ![Develop Branch][developBranchBadge] | ![MyGet Version DependencyInjection][myGetVersionDependencyInjectionDevelop] |
 
-| Feed                           | Package Url                                                                         |
-| :----------------------------- | :---------------------------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.DependencyInjection>  |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.DependencyInjection> |
+| Feed                           | Package Url                                                                              |
+| :----------------------------- | :--------------------------------------------------------------------------------------- |
+| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.DependencyInjection>  |
+| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.DependencyInjection> |
 
 ### EvilBaschdi.Settings
 
@@ -39,10 +39,10 @@ Default by `NuGet.config` is myget.org
 | ![Main Branch][mainBranchBadge]       | ![MyGet Version Settings][myGetVersionSettingsMain]    |
 | ![Develop Branch][developBranchBadge] | ![MyGet Version Settings][myGetVersionSettingsDevelop] |
 
-| Feed                           | Package Url                                                              |
-| :----------------------------- | :----------------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Settings>  |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Settings> |
+| Feed                           | Package Url                                                                   |
+| :----------------------------- | :---------------------------------------------------------------------------- |
+| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.Settings>  |
+| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.Settings> |
 
 [myGetBadge]: https://img.shields.io/badge/MyGet.org-gray?style=for-the-badge&logo=myget
 [codebergBadge]: https://img.shields.io/badge/Codeberg-gray?style=for-the-badge&logo=codeberg
@@ -54,12 +54,12 @@ Default by `NuGet.config` is myget.org
 [codeFactorMainOverview]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/main
 [commitActivityMainBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
 [lastCommitMainBadge]: https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
-[myGetVersionDependencyInjectionMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.DependencyInjection?style=for-the-badge&label=EvilBaschdi.DependencyInjection
-[myGetVersionSettingsMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Settings?style=for-the-badge&label=EvilBaschdi.Settings
+[myGetVersionDependencyInjectionMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.DependencyInjection?style=for-the-badge&label=EvilBaschdi.DependencyInjection
+[myGetVersionSettingsMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Settings
 
 [codeFactorDevelopBadge]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/develop?style=for-the-badge
 [codeFactorDevelopOverview]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/develop
 [commitActivityDevelopBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/develop?style=for-the-badge
 [lastCommitDevelopBadge]: https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/develop?style=for-the-badge
-[myGetVersionDependencyInjectionDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.DependencyInjection?style=for-the-badge&label=EvilBaschdi.DependencyInjection
-[myGetVersionSettingsDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Settings?style=for-the-badge&label=EvilBaschdi.Settings
+[myGetVersionDependencyInjectionDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Core.DependencyInjection?style=for-the-badge&label=EvilBaschdi.DependencyInjection
+[myGetVersionSettingsDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Settings
