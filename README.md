@@ -67,7 +67,7 @@ Default by `NuGet.config` is myget.org
 [commitActivityMainBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
 [lastCommitMainBadge]: https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
 [myGetVersionDependencyInjectionMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.DependencyInjection?style=for-the-badge&label=EvilBaschdi.Core.DependencyInjection
-[myGetVersionLoggingMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Core.Logging
+[myGetVersionLoggingMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Logging?style=for-the-badge&label=EvilBaschdi.Core.Logging
 [myGetVersionSettingsMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Core.Settings
 
 [codeFactorDevelopBadge]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/develop?style=for-the-badge
