@@ -8,6 +8,7 @@ namespace EvilBaschdi.Core.Logging;
 public class FileLoggerConfiguration : IFileLoggerConfiguration
 {
     private string _logDirectory = Path.Combine(AppContext.BaseDirectory, "logs");
+
     /// <summary>
     ///     Gets or sets the base directory where logs will be stored.
     ///     Defaults to {AppContext.BaseDirectory}/logs
@@ -19,6 +20,7 @@ public class FileLoggerConfiguration : IFileLoggerConfiguration
     }
 
     private string _logFileNamePattern = "app-{date}.log";
+
     /// <summary>
     ///     Gets or sets the log file name pattern.
     ///     Use {date} as a placeholder for the timestamp based on <see cref="LogInterval" />.
@@ -48,6 +50,7 @@ public class FileLoggerConfiguration : IFileLoggerConfiguration
     public LogLevel MinimumLogLevel { get; set; } = LogLevel.Debug;
 
     private string _headline;
+
     /// <summary>
     ///     Gets or sets the headline for the log file.
     ///     If provided, it will be written as the first line of a new log file.

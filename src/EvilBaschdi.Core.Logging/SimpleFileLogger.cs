@@ -53,7 +53,7 @@ public sealed class SimpleFileLogger(
         var message = formatter(state, exception);
         // ReSharper disable once RedundantAssignment
         var logEntry = FormatLogEntry(logLevel, message, exception);
-        
+
         // workaround for GuardClauseAssertion failure
         _ = exception;
 
