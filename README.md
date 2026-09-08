@@ -1,79 +1,101 @@
+<!-- markdownlint-disable MD033 -->
 # EvilBaschdi.Extensions
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Target: .NET 10.0](https://img.shields.io/badge/.NET-10.0-512bd4.svg?style=for-the-badge&logo=dotnet)](Directory.Build.props)
 
-## Package Feeds
+Extensions and core infrastructure libraries for .NET applications, providing dependency injection utilities, logging helpers, and file-based/machine-and-user settings management.
 
-Default by `NuGet.config` is myget.org
+---
 
-| Feed                           | Feed Url                                                         |
-| :----------------------------- | :--------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://www.myget.org/F/evilbaschdi/api/v3/index.json>          |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/api/packages/evilbaschdi/nuget/index.json> |
+## 📈 Quality & Activity
 
-## Quality & Activity
+| Branch | Status & Activity |
+| :--- | :--- |
+| ![Main](https://img.shields.io/badge/branch-main-brightgreen?style=flat-square&logo=git&logoColor=white&color=c9ff00) | [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/main?style=flat-square)](https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/main) ![Commit Activity Main](https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/main?style=flat-square) ![Last Commit Main](https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/main?style=flat-square) |
+| ![Develop](https://img.shields.io/badge/branch-develop-blue?style=flat-square&logo=git&logoColor=white&color=0080ff) | [![CodeFactor](https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/develop?style=flat-square)](https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/develop) ![Commit Activity Develop](https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/develop?style=flat-square) ![Last Commit Develop](https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/develop?style=flat-square) |
 
-| Branch                                | Status & Activity                                                                                                                                                        |
-| :------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Main Branch][mainBranchBadge]       | [![CodeFactor][codeFactorMainBadge]][codeFactorMainOverview] ![Commit Activity Main][commitActivityMainBadge] ![Last Commit Main][lastCommitMainBadge]                   |
-| ![Develop Branch][developBranchBadge] | [![CodeFactor][codeFactorDevelopBadge]][codeFactorDevelopOverview] ![Commit Activity Develop][commitActivityDevelopBadge] ![Last Commit Develop][lastCommitDevelopBadge] |
+---
 
-## Packages
+## 📦 Packages in this Repository
 
-### EvilBaschdi.Core.DependencyInjection
+| Package | Description | Sources |
+| :--- | :--- | :--- |
+| [`EvilBaschdi.Core.DependencyInjection`](src/EvilBaschdi.Core.DependencyInjection) | Generic host setup, service configurators, lifecycle handlers & startup execution. | [![MyGet](https://img.shields.io/badge/MyGet-gray?style=flat-square&logo=myget)](https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.DependencyInjection) [![Codeberg](https://img.shields.io/badge/Codeberg-gray?style=flat-square&logo=codeberg)](https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.DependencyInjection) |
+| [`EvilBaschdi.Core.Logging`](src/EvilBaschdi.Core.Logging) | Logging utilities and extensions for `Microsoft.Extensions.Logging`. | [![MyGet](https://img.shields.io/badge/MyGet-gray?style=flat-square&logo=myget)](https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.Logging) [![Codeberg](https://img.shields.io/badge/Codeberg-gray?style=flat-square&logo=codeberg)](https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.Logging) |
+| [`EvilBaschdi.Core.Settings`](src/EvilBaschdi.Core.Settings) | JSON settings management with machine/user isolation and writable settings support. | [![MyGet](https://img.shields.io/badge/MyGet-gray?style=flat-square&logo=myget)](https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.Settings) [![Codeberg](https://img.shields.io/badge/Codeberg-gray?style=flat-square&logo=codeberg)](https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.Settings) |
 
-| Branch                                | Version                                                                      |
-| :------------------------------------ | :--------------------------------------------------------------------------- |
-| ![Main Branch][mainBranchBadge]       | ![MyGet Version DependencyInjection][myGetVersionDependencyInjectionMain]    |
-| ![Develop Branch][developBranchBadge] | ![MyGet Version DependencyInjection][myGetVersionDependencyInjectionDevelop] |
+---
 
-| Feed                           | Package Url                                                                              |
-| :----------------------------- | :--------------------------------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.DependencyInjection>  |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.DependencyInjection> |
+## 🚀 Package Feeds
 
-### EvilBaschdi.Core.Logging
+All packages (Release and Preview builds) are published to **MyGet** and **Codeberg**. You only need to configure **one** of these feeds.
 
-| Branch                                | Version                                              |
-| :------------------------------------ | :--------------------------------------------------- |
-| ![Main Branch][mainBranchBadge]       | ![MyGet Version Logging][myGetVersionLoggingMain]    |
-| ![Develop Branch][developBranchBadge] | ![MyGet Version Logging][myGetVersionLoggingDevelop] |
+| Registry | Feed URL |
+| :--- | :--- |
+| **MyGet** | `https://www.myget.org/F/evilbaschdi/api/v3/index.json` |
+| **Codeberg** | `https://codeberg.org/api/packages/evilbaschdi/nuget/index.json` |
 
-| Feed                           | Package Url                                                                  |
-| :----------------------------- | :--------------------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.Logging>  |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.Logging> |
+### Add Feed via .NET CLI
 
-### EvilBaschdi.Core.Settings
+Choose either MyGet or Codeberg:
 
-| Branch                                | Version                                                |
-| :------------------------------------ | :----------------------------------------------------- |
-| ![Main Branch][mainBranchBadge]       | ![MyGet Version Settings][myGetVersionSettingsMain]    |
-| ![Develop Branch][developBranchBadge] | ![MyGet Version Settings][myGetVersionSettingsDevelop] |
+```bash
+# Option A: MyGet (recommended)
+dotnet nuget add source https://www.myget.org/F/evilbaschdi/api/v3/index.json -n "EvilBaschdi MyGet"
 
-| Feed                           | Package Url                                                                   |
-| :----------------------------- | :---------------------------------------------------------------------------- |
-| ![myget.org][myGetBadge]       | <https://myget.org/feed/evilbaschdi/package/nuget/EvilBaschdi.Core.Settings>  |
-| ![codeberg.org][codebergBadge] | <https://codeberg.org/evilbaschdi/-/packages/nuget/EvilBaschdi.Core.Settings> |
+# Option B: Codeberg
+dotnet nuget add source https://codeberg.org/api/packages/evilbaschdi/nuget/index.json -n "EvilBaschdi Codeberg"
+```
 
-[myGetBadge]: https://img.shields.io/badge/MyGet.org-gray?style=for-the-badge&logo=myget
-[codebergBadge]: https://img.shields.io/badge/Codeberg-gray?style=for-the-badge&logo=codeberg
+<details>
+<summary><b>Sample <code>NuGet.Config</code> with Package Source Mapping</b></summary>
 
-[mainBranchBadge]: https://img.shields.io/badge/branch-main-brightgreen?style=for-the-badge&logo=git&logoColor=white&color=c9ff00
-[developBranchBadge]: https://img.shields.io/badge/branch-develop-blue?style=for-the-badge&logo=git&logoColor=white&color=0080ff
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    <!-- Choose one of the following feeds: -->
+    <add key="EvilBaschdi MyGet" value="https://www.myget.org/F/evilbaschdi/api/v3/index.json" />
+    <!-- <add key="EvilBaschdi Codeberg" value="https://codeberg.org/api/packages/evilbaschdi/nuget/index.json" /> -->
+  </packageSources>
 
-[codeFactorMainBadge]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/main?style=for-the-badge
-[codeFactorMainOverview]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/main
-[commitActivityMainBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
-[lastCommitMainBadge]: https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/main?style=for-the-badge
-[myGetVersionDependencyInjectionMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.DependencyInjection?style=for-the-badge&label=EvilBaschdi.Core.DependencyInjection
-[myGetVersionLoggingMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Logging?style=for-the-badge&label=EvilBaschdi.Core.Logging
-[myGetVersionSettingsMain]: https://img.shields.io/myget/evilbaschdi/v/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Core.Settings
+  <packageSourceMapping>
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+    <packageSource key="EvilBaschdi MyGet">
+      <package pattern="EvilBaschdi.*" />
+    </packageSource>
+    <!-- <packageSource key="EvilBaschdi Codeberg">
+      <package pattern="EvilBaschdi.*" />
+    </packageSource> -->
+  </packageSourceMapping>
+</configuration>
+```
 
-[codeFactorDevelopBadge]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/badge/develop?style=for-the-badge
-[codeFactorDevelopOverview]: https://www.codefactor.io/repository/github/evilbaschdi/EvilBaschdi.Extensions/overview/develop
-[commitActivityDevelopBadge]: https://img.shields.io/github/commit-activity/m/evilbaschdi/EvilBaschdi.Extensions/develop?style=for-the-badge
-[lastCommitDevelopBadge]: https://img.shields.io/github/last-commit/evilbaschdi/EvilBaschdi.Extensions/develop?style=for-the-badge
-[myGetVersionDependencyInjectionDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Core.DependencyInjection?style=for-the-badge&label=EvilBaschdi.Core.DependencyInjection
-[myGetVersionLoggingDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Core.Logging?style=for-the-badge&label=EvilBaschdi.Core.Logging
-[myGetVersionSettingsDevelop]: https://img.shields.io/myget/evilbaschdi/vpre/EvilBaschdi.Core.Settings?style=for-the-badge&label=EvilBaschdi.Core.Settings
+</details>
+
+---
+
+## 📥 Installation
+
+Install any package via `dotnet add package`:
+
+### Standard Release
+
+```bash
+dotnet add package EvilBaschdi.Core.DependencyInjection
+dotnet add package EvilBaschdi.Core.Logging
+dotnet add package EvilBaschdi.Core.Settings
+```
+
+### Preview Builds
+
+```bash
+dotnet add package EvilBaschdi.Core.DependencyInjection --prerelease
+dotnet add package EvilBaschdi.Core.Logging --prerelease
+dotnet add package EvilBaschdi.Core.Settings --prerelease
+```
