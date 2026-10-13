@@ -62,7 +62,7 @@ These usings are available globally (via `Directory.Build.props`):
 Conditional Global Usings:
 - `.DependencyInjection` projects: `Microsoft.Extensions.Hosting`, `Microsoft.Extensions.DependencyInjection`
 - `.Settings` projects: `Microsoft.Extensions.Configuration.Binder`, `Microsoft.Extensions.Configuration.FileExtensions`, `Microsoft.Extensions.Configuration.Json`
-- `.Tests` projects: `AutoFixture.Idioms`, `AutoFixture.Xunit3`, `EvilBaschdi.Testing`, `FluentAssertions`, `NSubstitute`, `Xunit`, etc.
+- `.Tests` projects: `AutoFixture.Idioms`, `AutoFixture.Xunit3`, `EvilBaschdi.Testing`, `AwesomeAssertions`, `NSubstitute`, `Xunit`, etc.
 
 ## Naming Conventions & File Organization
 
